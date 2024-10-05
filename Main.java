@@ -1,6 +1,10 @@
 import java.util.Scanner;
 import task1.DirectoryAnalyzer;
 import task2.TextToFile;
+import task3.CodeConventions;
+import task4.StringComparison;
+import task5.JavaClassLibraryShowcase;
+import task6.ReadAndAnalyzeCsv;
 
 public class Main {
 
@@ -29,16 +33,16 @@ public class Main {
                     runTask2(); // Run Text to File
                     break;
                 case 3:
-                    System.out.println("Task 3 is not yet implemented.");
+                    runTask3(); // Run Code Conventions
                     break;
                 case 4:
-                    System.out.println("Task 4 is not yet implemented.");
+                    runTask4(); // Run String Comparison
                     break;
                 case 5:
-                    System.out.println("Task 5 is not yet implemented.");
+                    runTask5(); // Run Java Class Library
                     break;
                 case 6:
-                    System.out.println("Task 6 is not yet implemented.");
+                    runTask6(); // Run Read and Analyze CSV
                     break;
                 case 0:
                     System.out.println("Exiting the program. Goodbye!");
@@ -74,6 +78,27 @@ public class Main {
         String fileName = scanner.nextLine();
 
         TextToFile.writeToFile(text, fileName);
+    }
+
+    private static void runTask3() {
+        System.out.println("Running Task 3: Code Conventions");
+        CodeConventions.demonstrateCodeConventions();
+    }
+
+    private static void runTask4() {
+        System.out.println("Running Task 4: Substring Search & Comparison");
+        StringComparison.textEditorSearch();
+    }
+
+    public static void runTask5() {
+        System.out.println("Running Task 5: Java Class Library Examples");
+        JavaClassLibraryShowcase.utilExample();
+    }
+
+    public static void runTask6() {
+        System.out.println("Running Task 6: Read and Analyze CSV with flight data");
+        String csvFilePath = "./task6/flights.csv";
+        ReadAndAnalyzeCsv.processCSV(csvFilePath);
     }
 }
 
