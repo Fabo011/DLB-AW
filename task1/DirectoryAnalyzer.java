@@ -4,7 +4,11 @@ import java.io.File;
 
 public class DirectoryAnalyzer {
 
-    // Method to list all files in the directory and print their sizes
+    /**
+     * Lists all files in the specified directory and prints their sizes.
+     *
+     * @param directoryPath the path of the directory to analyze
+     */
     public static void listFilesInDirectory(String directoryPath) {
         File directory = new File(directoryPath);
 
@@ -37,8 +41,13 @@ public class DirectoryAnalyzer {
         System.out.println("Total size of files in directory: " + totalSize + " bytes\n");
     }
 
-    // Method to recursively calculate the total size of the directory (including subdirectories)
-    // Method to solve description 1.2 and 1.3 of the task1
+    /**
+     * Recursively calculates the total size of the specified directory,
+     * including the sizes of files in all its subdirectories.
+     *
+     * @param directory the directory for which to calculate the total size
+     * @return the total size of the directory in bytes
+     */
     public static long calculateTotalDirectorySize(File directory) {
         if (!directory.isDirectory()) {
             return 0;  // If it's not a directory, return 0
@@ -63,6 +72,12 @@ public class DirectoryAnalyzer {
         return totalSize;
     }
 
+    /**
+     * Analyzes the specified directory by listing files and calculating
+     * the total size of the directory including all subdirectories.
+     *
+     * @param directoryPath the path of the directory to analyze
+     */
     public static void analyzeDirectory(String directoryPath) {
         // Step 1: List files and their sizes
         listFilesInDirectory(directoryPath);

@@ -1,6 +1,16 @@
 package task3;
 
 public class CodeConventions {
+
+    /**
+     * Demonstrates various code conventions and best practices in Java.
+     * This method showcases examples of bad and best practices in:
+     * 1. Naming conventions
+     * 2. Code formatting
+     * 3. Commenting
+     * 4. Method length
+     * 5. Error handling
+     */
     public static void demonstrateCodeConventions() {
         // 1. Naming Conventions
         System.out.println("1. Naming Conventions:");

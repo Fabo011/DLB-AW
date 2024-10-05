@@ -9,6 +9,11 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 
 public class JavaClassLibraryShowcase {
+
+    /**
+     * Demonstrates examples of various Java classes from the standard library.
+     * Includes ArrayList, HashMap, BufferedReader, and date/time classes.
+     */
     public static void utilExample() {
         // Example 1: java.util.ArrayList and java.util.HashMap
         // ArrayList example

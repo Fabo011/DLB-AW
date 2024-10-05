@@ -5,6 +5,8 @@ import task3.CodeConventions;
 import task4.StringComparison;
 import task5.JavaClassLibraryShowcase;
 import task6.ReadAndAnalyzeCsv;
+import java.io.IOException;
+
 
 public class Main {
 
@@ -20,6 +22,7 @@ public class Main {
             System.out.println("4. Task 4 - String Comparison");
             System.out.println("5. Task 5 - Three examples of Java Class Library");
             System.out.println("6. Task 6 - Read and Analyze CSV");
+            System.out.println("7. Generate JavaDoc documentation");
             System.out.println("0. Exit");
 
             System.out.print("Enter the number of the task you want to run: ");
@@ -43,6 +46,9 @@ public class Main {
                     break;
                 case 6:
                     runTask6(); // Run Read and Analyze CSV
+                    break;
+                case 7:
+                    generateJavaDoc(); // Generate JavaDoc
                     break;
                 case 0:
                     System.out.println("Exiting the program. Goodbye!");
@@ -99,6 +105,27 @@ public class Main {
         System.out.println("Running Task 6: Read and Analyze CSV with flight data");
         String csvFilePath = "./task6/flights.csv";
         ReadAndAnalyzeCsv.processCSV(csvFilePath);
+    }
+
+    public static void generateJavaDoc() {
+        String[] command = {
+                "javadoc",
+                "-d", "docs",
+                "-sourcepath", ".",
+                "-subpackages", "task1:task2:task3:task4:task5:task6"
+        };
+
+        try {
+            ProcessBuilder pb = new ProcessBuilder(command);
+            Process process = pb.inheritIO().start();
+            process.waitFor();
+            System.out.println("JavaDoc has been generated in the 'doc' folder.");
+        } catch (IOException e) {
+            System.out.println("Error generating JavaDoc: " + e.getMessage());
+        } catch (InterruptedException e) {
+            System.out.println("JavaDoc generation interrupted: " + e.getMessage());
+            Thread.currentThread().interrupt();
+        }
     }
 }
 

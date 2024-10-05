@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class ReadAndAnalyzeCsv {
+
     // Class to hold flight information
     static class Flight {
         String flightNumber;
@@ -26,7 +27,12 @@ public class ReadAndAnalyzeCsv {
         }
     }
 
-    // Method to read and process CSV file
+    /**
+     * Reads and processes the CSV file at the specified path.
+     * Parses each line to create Flight objects and compiles a report.
+     *
+     * @param csvFilePath the path to the CSV file to be processed
+     */
     public static void processCSV(String csvFilePath) {
         ArrayList<Flight> flights = new ArrayList<>();
         String line;
@@ -52,7 +58,12 @@ public class ReadAndAnalyzeCsv {
         }
     }
 
-    // Helper method to parse CSV row into Flight object
+    /**
+     * Parses a CSV line into a Flight object.
+     *
+     * @param csvLine the CSV line containing flight data
+     * @return a Flight object populated with the parsed data
+     */
     public static Flight parseFlightData(String csvLine) {
         // Split the CSV line into its fields
         String[] fields = csvLine.split(",");
@@ -66,5 +77,4 @@ public class ReadAndAnalyzeCsv {
         // Return the Flight object
         return new Flight(flightNumber, departureCity, arrivalCity, date);
     }
-
 }

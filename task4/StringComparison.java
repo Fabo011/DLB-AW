@@ -5,6 +5,14 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class StringComparison {
+
+    /**
+     * Finds and displays information about a substring within a given text
+     * using various String methods.
+     *
+     * @param text      The main text to search within.
+     * @param substring The substring to search for.
+     */
     public static void findSubstring(String text, String substring) {
         System.out.println("Using String Methods:");
 
@@ -33,7 +41,12 @@ public class StringComparison {
         System.out.println();
     }
 
-    // Method to demonstrate substring search using regular expressions
+    /**
+     * Demonstrates substring search using regular expressions.
+     *
+     * @param text        The main text to search within.
+     * @param patternString The regex pattern to search for.
+     */
     public static void findUsingRegex(String text, String patternString) {
         System.out.println("Using Regular Expressions:");
         Pattern pattern = Pattern.compile(patternString);
@@ -48,7 +61,12 @@ public class StringComparison {
         System.out.println();
     }
 
-    // Method to compare substrings
+    /**
+     * Compares substrings within the provided text using various String comparison methods.
+     *
+     * @param text      The main text to compare.
+     * @param substring The substring to compare against.
+     */
     public static void compareSubstrings(String text, String substring) {
         System.out.println("Substring Comparison:");
 
@@ -75,7 +93,10 @@ public class StringComparison {
         System.out.println();
     }
 
-    // Search function in a simple text editor
+    /**
+     * Executes a simple search function in a text editor environment,
+     * prompting user input for text and substring/pattern to search.
+     */
     public static void textEditorSearch() {
         Scanner scanner = new Scanner(System.in);
 
@@ -97,3 +118,4 @@ public class StringComparison {
         compareSubstrings(text, substring);
     }
 }
+
